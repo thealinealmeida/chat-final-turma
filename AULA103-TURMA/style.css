@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+    background-color: rgb(124, 165, 243);
+
+}
+.logo {
+    width: 30%;
+}
+.header, .form-group {
+    margin: 20px;
+}
