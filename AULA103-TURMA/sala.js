@@ -39,25 +39,24 @@ function addSala(){
 
 }
 
-function getData(){
+function getData() {
     firebase.database().ref('/').on("value", snapshot => {
-        //criar lista de salas
         let salas = [];
-        //pegar as subpastas (child) na pasta principal (parent);
         snapshot.forEach(childSnapshot => {
-        //guardar as informações da pasta
-        const childKey = childSnapshot.key;
-
-        //criar pasta no html
-        const html = '<div class="nomeSala" id="'
+            const childKey = childSnapshot.key;
+            const html = '<div class="nomeSala" id="'
                 + childKey
                 + '" onclick="carregaSala(this.id)">#'
                 + childKey
                 + '</div>'
-                //colocar a sala na lista de salas
             salas.push(html);
+        });
+        document.getElementById("output").innerHTML = salas.join("");
+        // const output = document.getElementById("output");
+        // output.innerHTML = salas.join("");
+    });
+}
 
-        })
         //imprimir no html
 
         document.getElementById("output").innerHTML = salas.join("");
