@@ -1,27 +1,18 @@
-const firebaseConfig = {
 
 
-
-
-    
-}
-
-
-
-
+firebase.initializeApp(firebaseConfig);
 
 inicializar();
-function inicializar(){
 
+function inicializar() {
     const nomeUsuario = localStorage.getItem("nomeUsuario");
-    console.log(nomeUsuario);
-    //colocar nome na tela
+    // console.log(nomeUsuario);
     document.getElementById("nomeUsuario").textContent = "Olá, " + nomeUsuario + "!";
 
+    //getData();
 }
 
-
-function addSala(){
+function addSala() {
     const nomeSala = document.getElementById("nomeSala").value;
     console.log(nomeSala);
     if (nomeSala) {
@@ -31,12 +22,6 @@ function addSala(){
 
         carregaSala(nomeSala);
     }
-
-
-
-
-
-
 }
 
 function getData() {
@@ -57,13 +42,6 @@ function getData() {
     });
 }
 
-        //imprimir no html
-
-        document.getElementById("output").innerHTML = salas.join("");
-
-
-    })
-}
 function carregaSala(sala) {
     localStorage.setItem("nomeSala", sala);
     location = "chat.html";
