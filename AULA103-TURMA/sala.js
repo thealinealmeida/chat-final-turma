@@ -9,7 +9,7 @@ function inicializar() {
     // console.log(nomeUsuario);
     document.getElementById("nomeUsuario").textContent = "Olá, " + nomeUsuario + "!";
 
-    //getData();
+    getData();
 }
 
 function addSala() {
